@@ -1,0 +1,67 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniTwitter</title>
+    <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+
+<!-- Top Bar -->
+<div id="top-bar">
+    <div id="buttons">
+        <button onclick="showPosts()">Posts</button>
+        <button onclick="showAds()">Advertising</button>
+        <button onclick="showJobs()">Job</button>
+    </div>
+</div>
+
+<!-- Bottom Section -->
+<div id="bottom-section">
+    <!-- Left Section for Login -->
+    <div id="left-section">
+
+        <div><h1> MiniTwitter - N</h1></div>
+
+        <div class="user-profile">
+            <table th:object="${session.user}">
+                <tr>
+                    <th colspan="3" class="user-name">Welcome </th>
+                    <th colspan="3" class="user-name" th:text="${user.nickname}"></th>
+                </tr>
+                <tr>
+                    <td>posts:</td>    <td> 0</td>
+                    <td>followers:</td><td>19</td>
+                    <td>following:</td><td>13</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="user-balance">Tips: </td>
+                    <td colspan="2">$100.00</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="user-balance">Balance: </td>
+                    <td colspan="2">$100.00</td>
+                </tr>
+                <tr>
+                    <td colspan="6"><button action="logOut">Log Out</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Right Section for Posts -->
+    <div id="right-section">
+        <div id="posts">
+            <h2>Posts</h2>
+            <!-- Your regular posts content goes here -->
+        </div>
+        <div id="trendy-posts">
+            <h2>Trendy Posts</h2>
+            <!-- Your trendy posts content goes here -->
+        </div>
+    </div>
+</div>
+
+<script src="style/script.js"></script>
+</body>
+</html>
